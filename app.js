@@ -82,6 +82,6 @@ app.get("/contact", function(req, res) {
     res.render("contact.ejs");
 });
 
-app.listen(3000, function() {
+app.listen(process.env.PORT || 3000, function() {
     console.log("The server is set up...");
 });
