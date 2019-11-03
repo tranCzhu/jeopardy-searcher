@@ -1,0 +1,62 @@
+<% include partials/header %>
+
+    <link rel="stylesheet" href="/css/search.css">
+
+    <nav class="navbar navbar-expand-lg bg-transparent">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav ml-auto" style="margin-right: 40px;">
+                <li class="nav-item active">
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn-outline-light" href="/contact">Contact & API / Images Credits</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="jumbotron jumbotron-fluid bg-light">
+        <div class="jum-container">
+            <h1 class="display-4">It's time for Jeopardy!</h1>
+            <p class="lead">...enter a keyword to explore some fun clues :)</p>
+            <hr class="my-4">
+            <form action="/results" method="GET">
+                <input type="text" name="keyword" id="queryKey" maxlength="40" placeholder="politics, book, cars...">
+                <button class="btn btn-warning btn-lg" style="height: 6%; line-height: 20px; position: absolute; margin-left: 0.3%;">Search</button>
+            </form>
+            <!-- <div style="line-height: 2;">
+                Try <a href="/continents" style="color: orange;">Continent Exploration</a>,
+            </div>     -->
+            <div style="line-height: 2;">
+                or... <span class="hoverElements" id="lucky" style="color: green;">Feeling lucky</span>?
+            </div>
+        </div>
+    </div>
+
+
+    <!-- THIS SCRIPT IS NOT GON WORK -->
+    <script>
+        window.onload = function randomBackground() {
+            var ran = Math.floor(Math.random() * 3) + 1;
+            var ranImg = "url(/imgs/" + ran + ".jpg)";
+            document.querySelector("body").style.backgroundImage = ranImg;
+        }
+
+        var lucky = document.querySelector("#lucky");
+        // hover  
+        lucky.addEventListener("mouseover", function(){
+            this.classList.add("hover");
+        });
+        // unhover
+        lucky.addEventListener("mouseout", function(){
+            this.classList.remove("hover");
+        });
+        // feeling lucky
+        lucky.addEventListener("click", function(){
+            window.location.href = "/random";
+        });
+    </script>
+
+<% include partials/footer %>
