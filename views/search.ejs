@@ -25,6 +25,17 @@
             <form action="/results" method="GET">
                 <input type="text" name="keyword" id="queryKey" maxlength="40" placeholder="politics, book, cars...">
                 <button class="btn btn-warning btn-lg" style="height: 6%; line-height: 20px; position: absolute; margin-left: 0.3%;">Search</button>
+                <!-- filter for value -->
+                <select class="form-control form-control-sm filter" name="value">
+                    <option value="0">No Value Filter</option>
+                    <option>200</option>
+                    <option>400</option>
+                    <option>600</option>
+                    <option>800</option>
+                    <option>1000</option>
+                </select>
+                <!-- filter for date -->
+
             </form>
             <div style="line-height: 2;">
                 or... <span class="hoverElements" id="lucky" style="color: green;">Feeling lucky</span>?

@@ -28,6 +28,13 @@ body {
     line-height: 2.8rem;
 }
 
+.filter {
+    width: 130px;
+    margin: auto auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
 .hover {
     text-decoration: none;
     text-shadow: 2px 2px 5px gray;

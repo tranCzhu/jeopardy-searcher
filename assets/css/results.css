@@ -2,6 +2,10 @@ body {
     background-size: 100%;
 }
 
+.bold {
+    font-weight: bold;
+}
+
 .dropdown-toggle {
     margin-left: 40%;
 }

@@ -34,7 +34,6 @@
             <div class="dropdown-menu">
                 <li class="dropdown-item" id="allCat">all categories</li>
                 <div class="dropdown-divider"></div>
-                <!-- display category list -->
                 <% if (categories.length > 0) {%>
                     <% categories.forEach(function(category) { %>
                         <li class="dropdown-item categories"><%= category %></li>
@@ -68,8 +67,8 @@
                             <div class="card-body">
                                 <h5 class="card-title"><%= entry["category"].title %></h5>
                                 <p class="card-text">
-                                    <div>Value: <span class="clue-value"><%= entry["value"] %></span></div>
-                                    <div>Question: <%= entry["question"] %></div>
+                                    <div><span class="bold">Value: <span class="clue-value"><%= entry["value"] %></span></span></div>
+                                    <div><span class="bold">Question:</span> <%= entry["question"] %></div>
                                 </p>
                                 <button class="btn btn-warning answerBtn">Answer</button>
                                 <div class="answers"><%= entry["answer"] %></div>
