@@ -26,12 +26,13 @@
                     </ul>
                 </div>
         </nav>
+        <!-- display by category-->
         <div class="btn-group">
             <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Display by Category
             </button>
             <div class="dropdown-menu">
-                <li class="dropdown-item" id="all">all categories</li>
+                <li class="dropdown-item" id="allCat">all categories</li>
                 <div class="dropdown-divider"></div>
                 <!-- display category list -->
                 <% if (categories.length > 0) {%>
@@ -42,6 +43,23 @@
             </div>
         </div>
 
+        <!-- display by value -->
+        <div class="btn-group">
+            <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Display by Value
+            </button>
+            <div class="dropdown-menu">
+                <li class="dropdown-item" id="allVal">all values</li>
+                <div class="dropdown-divider"></div>
+                <% if (values.length > 0) {%>
+                    <% values.forEach(function(value) { %>
+                        <li class="dropdown-item values"><%= value %></li>
+                    <% }); %>
+                <% } %>
+            </div>
+        </div>
+
+
         <div class="container">
             <div class="row">
                 <% data.forEach(function(entry) { %>
@@ -50,8 +68,9 @@
                             <div class="card-body">
                                 <h5 class="card-title"><%= entry["category"].title %></h5>
                                 <p class="card-text">
-                                    <div>Value: <%= entry["value"] %></div></p>
-                                    <div>Question: <%= entry["question"] %></div></p>
+                                    <div>Value: <span class="clue-value"><%= entry["value"] %></span></div>
+                                    <div>Question: <%= entry["question"] %></div>
+                                </p>
                                 <button class="btn btn-warning answerBtn">Answer</button>
                                 <div class="answers"><%= entry["answer"] %></div>
                             </div>
