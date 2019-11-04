@@ -31,7 +31,8 @@
                 Display by Category
             </button>
             <div class="dropdown-menu">
-                <li class="dropdown-item" id="all">all</li>
+                <li class="dropdown-item" id="all">all categories</li>
+                <div class="dropdown-divider"></div>
                 <!-- display category list -->
                 <% if (categories.length > 0) {%>
                     <% categories.forEach(function(category) { %>
@@ -44,15 +45,17 @@
         <div class="container">
             <div class="row">
                 <% data.forEach(function(entry) { %>
-                    <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title"><%= entry["category"].title %></h5>
-                        <p class="card-text">
-                            <div>Value: <%= entry["value"] %></div></p>
-                            <div>Question: <%= entry["question"] %></div></p>
-                        <button class="btn btn-warning answerBtn">Answer</button>
-                        <div class="answers"><%= entry["answer"] %></div>
-                    </div>
+                    <div class="container">
+                        <div class="card" style="width: 30rem;">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= entry["category"].title %></h5>
+                                <p class="card-text">
+                                    <div>Value: <%= entry["value"] %></div></p>
+                                    <div>Question: <%= entry["question"] %></div></p>
+                                <button class="btn btn-warning answerBtn">Answer</button>
+                                <div class="answers"><%= entry["answer"] %></div>
+                            </div>
+                        </div>
                     </div>
                 <% }); %>
             </div>

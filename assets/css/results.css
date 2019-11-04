@@ -1,16 +1,16 @@
 body {
-    background-size: contain;
+    background-size: 100%;
+}
+
+.container {
+    margin: 2% 2%;
+    padding: 0% 2% 0% 2%;
+    opacity: 0.85;
 }
 
 .card {
-    margin: 5% 3%;
-    padding: 0% 2% 0% 2%;
-    opacity: 0.8;
-}
-
-.card-body {
     text-align: center;
-    margin: auto auto;
+    margin: 5% 5% 5% 5%;
     margin-top: 0;
 }
 

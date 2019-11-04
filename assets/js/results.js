@@ -11,15 +11,24 @@ categories.forEach(function(category) {
         var entries = document.querySelectorAll(".card-title");
         entries.forEach(function(entry) {
             if (entry.textContent != filter) {
-                entry.style.display = "none";
+                var card = entry.parentElement.parentElement.parentElement;
+                card.classList.add("hidden");
             } else {
-                entry.style.display = "block";
+                var card = entry.parentElement.parentElement.parentElement;
+                card.classList.remove("hidden");
             }
         });
     });
 });
 
-
+var all = document.querySelector("#all");
+all.addEventListener("click", function() {
+    var entries = document.querySelectorAll(".card-title");
+    entries.forEach(function(entry) {
+        var card = entry.parentElement.parentElement.parentElement;
+        card.classList.remove("hidden");
+    });
+});
 
 
 var buttons = document.querySelectorAll(".answerBtn");
