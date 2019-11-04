@@ -23,17 +23,21 @@ app.get("/results", function(req, res) {
             var parsedData = JSON.parse(body);
             console.log(parsedData.length);
             var parsedResults = [];
+            var categories = [];
             for (var i in parsedData) {
                 if (parsedData[i].question.includes(keyword) || parsedData[i].category.title.includes(keyword)) {
                     parsedResults.push(parsedData[i]);
+                    if (!categories.includes(parsedData[i].category.title)) {
+                        categories.push(parsedData[i].category.title);
+                    }
                 }
             }
             console.log(parsedResults.length);
-            console.log(parsedResults);
+            console.log(categories);
             if (parsedResults.length < 1) {
                 res.render("notFound");
             }
-            res.render("results", {data: parsedResults});
+            res.render("results", {data: parsedResults, categories: categories});
         }
         else {
             res.send("API connection failed");
@@ -64,7 +68,7 @@ app.get("/random", function(req, res) {
             if (parsedData.length < 1) {
                 res.send("API connection failed");
             }
-            res.render("results", {data: parsedData});
+            res.render("random", {data: parsedData});
         }
         else {
             res.send("API connection failed");

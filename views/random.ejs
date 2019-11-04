@@ -20,26 +20,14 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav ml-auto" style="margin-right: 40px;">
+                        <li class="nav-item active">
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link btn-outline-light" href="/" style="margin-right: 15px;">Home</a>
                         </li>
                     </ul>
                 </div>
         </nav>
-        <div class="btn-group">
-            <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Display by Category
-            </button>
-            <div class="dropdown-menu">
-                <li class="dropdown-item" id="all">all</li>
-                <!-- display category list -->
-                <% if (categories.length > 0) {%>
-                    <% categories.forEach(function(category) { %>
-                        <li class="dropdown-item categories"><%= category %></li>
-                    <% }); %>
-                <% } %>
-            </div>
-        </div>
 
         <div class="container">
             <div class="row">
@@ -50,14 +38,19 @@
                         <p class="card-text">
                             <div>Value: <%= entry["value"] %></div></p>
                             <div>Question: <%= entry["question"] %></div></p>
-                        <button class="btn btn-warning answerBtn">Answer</button>
-                        <div class="answers"><%= entry["answer"] %></div>
+                        <a href="" class="btn btn-warning">Answer</a>
                     </div>
                     </div>
                 <% }); %>
             </div>
         </div>
 
-        <script type="text/javascript" src="/js/results.js"></script>
+        <script>
+            window.onload = function randomBackground() {
+                var ran = Math.floor(Math.random() * 3) + 1;
+                var ranImg = "url(/imgs/" + ran + ".jpg)";
+                document.querySelector("body").style.backgroundImage = ranImg;
+            }
+        </script>
 
 <% include partials/footer %>
